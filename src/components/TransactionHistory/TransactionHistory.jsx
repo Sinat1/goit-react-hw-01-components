@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import css from './TransactionHistory.module.css';
-import TransactionRow from "components/TransactionRows/TransactionRows";
+import TransactionRow from 'components/TransactionRows/TransactionRows';
 
 function TransactionHistory({ items }) {
   return (
@@ -14,18 +14,21 @@ function TransactionHistory({ items }) {
       </thead>
 
       <tbody>
-              {items.map(item => (
-                  <TransactionRow
-                      key={item.id}
-                      type={item.type}
-                      amount={item.amount}
-                      currency={item.currency}
-                  />
+        {items.map(item => (
+          <TransactionRow
+            key={item.id}
+            type={item.type}
+            amount={item.amount}
+            currency={item.currency}
+          />
         ))}
       </tbody>
     </table>
   );
 }
 
+TransactionHistory.propTypes = {
+  items: PropTypes.array.isRequired,
+};
 
 export default TransactionHistory;
