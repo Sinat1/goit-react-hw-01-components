@@ -1,24 +1,16 @@
+import css from './App.module.css'
 import Profile from 'components/Profile/Profile';
-import userData from 'user.json';
+import userData from '../../data/user.json';
 import Statistics from 'components/Statistics/Statistics';
-import statistics from 'statistics.json';
+import statistics from '../../data/statistics.json';
 import FriendList from 'components/FriendList/FriendList';
-import friendsData from 'friends.json';
+import friendsData from '../../data/friends.json';
 import TransactionHistory from 'components/TransactionHistory/TransactionHistory';
-import transactions from 'transactions.json';
+import transactions from '../../data/transactions.json';
 
 export const App = () => {
   return (
-    <div
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 25,
-        color: '#010101',
-      }}
-    >
+    <div className={css.app}>
       <Profile
         username={userData.username}
         tag={userData.tag}
